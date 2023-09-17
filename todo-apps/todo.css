@@ -1,0 +1,104 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body{
+    background-color: #8ED8C4;
+}
+
+.wrapper{
+    margin: 200px auto;
+    max-width: 700px;
+    width: 100%;
+    background: wheat;
+    padding: 25px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.wrapper .title{
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: 10px;
+}
+
+.wrapper .inputBoxAndaddBtn{
+    margin-top: 1.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper .inputBoxAndaddBtn .inputText{
+    width: 400px;
+    height: 30px;
+    border: none;
+    padding: 20px 10px;
+    border-radius: 6px;
+}
+
+.wrapper .inputBoxAndaddBtn .plus{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(130, 136, 220, 0.886);
+    color: rgba(49, 47, 41, 0.685);
+    font-size: 35px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.wrapper .list{
+    /* border: 1px solid red; */
+    margin: 25px auto;
+    width: 440px;
+    background-color: #edf2e2e5;
+    border-radius: 3px;
+}
+
+.wrapper .list li{
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 7px;
+    cursor: pointer;
+}
+
+.wrapper .list li button{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding-right: 5px;
+}
+
+.allDel{
+    display: flex;
+    margin-top: 3rem;
+    justify-content: flex-end;
+    box-sizing: border-box;
+}
+
+
+.allDel .allClearBtn{
+    background-color: black;
+    color: wheat;
+    cursor: pointer;
+    border-radius: 6px;
+    width: 80px;
+    height: 35px;
+}
+
+li button{
+    text-decoration: none;
+}
+
+.completed{
+    text-decoration: line-through;
+    color: gray;
+}
