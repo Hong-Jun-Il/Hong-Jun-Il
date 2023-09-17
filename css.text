@@ -1,5 +1,0 @@
-section{
-    min-height: 100vh;
-    padding: 10rem 9% 2rem;
-} 
-섹션에 min-height을 100퍼를 주고 어두운 색상을 번갈아주면서 줘서 섹션마다 구분하기
