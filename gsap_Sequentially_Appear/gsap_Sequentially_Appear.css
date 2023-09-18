@@ -1,0 +1,116 @@
+:root{
+    --bg-color: #1f242d;
+    --second-bg-color: #323946;
+    --text-color: #f1f7f8d8
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+section{
+    min-height: 100vh;
+}
+
+.header{
+    background: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: var(--text-color);
+    display: flex;
+    justify-content: space-around;  
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 5rem;
+}
+
+.header .logo{
+    font-size: 2.5rem;
+}
+
+.header .nav{
+    display: flex;
+    justify-content: space-around;
+    width: 40rem;
+}
+
+.header .nav a{
+    color: var(--text-color);
+    font-size: 1.5rem;
+}
+
+.sec1{
+    background: var(--bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container{
+    text-align: center;
+}
+
+.container h2{
+    font-size: 3rem;
+    color: var(--text-color);
+}
+
+.img-wrapper{
+    position: absolute;
+    left: 160px;
+    bottom: 50px;
+}
+
+.img-wrapper img{
+    width: 350px;
+}
+
+.fighting{
+    position: absolute;
+    right: 150px;
+    bottom: 150px;
+    border: 2px solid var(--second-bg-color);
+    border-radius: 50%;
+    width: 10rem;
+    height: 10rem;
+    color: var(--text-color);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    padding: 6rem;
+}
+
+/* sec2 */
+
+.sec2{
+    background: var(--second-bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 5rem 9% 2rem;
+    height: 140vh;
+}
+
+.sec2 h2{
+    font-size: 4rem;
+    color: var(--text-color);
+    margin-bottom: 4rem;
+}
+
+.sec2 .img-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 35vw;
+}
+
+.sec2 .img-container img{
+    width: 100%;
+}
