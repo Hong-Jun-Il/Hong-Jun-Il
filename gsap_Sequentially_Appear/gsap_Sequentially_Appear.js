@@ -7,6 +7,7 @@ gsap.utils.toArray('.sequence').forEach(item => {
         ScrollTrigger.create({
             trigger: item,
             onEnter: ()=>{animate(item)},
+            once: 'true',
         })
     }
 })
