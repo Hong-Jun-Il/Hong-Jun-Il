@@ -8,6 +8,7 @@ gsap.utils.toArray('.sequence').forEach(item => {
             trigger: item,
             onEnter: ()=>{animate(item)},
             once: 'true',
+            // once를 true로 하면 애니메이션이 한번만 나옴
         })
     }
 })
