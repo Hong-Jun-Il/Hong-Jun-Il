@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300;1,400;1,500;1,600;1,700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+:root{
+    --intro-bg-color: #0D0D0D;
+    --intro-text-color: #fff;
+    --main-bg-color: #EFE7DF;
+}
+
+*{
+    font-family: 'Cormorant Garamond', sans-serif;
+    font-style: italic;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    scroll-behavior: smooth;
+    /* border: none;
+    outline: none; */
+}
+
+body{
+    background-color: var(--main-bg-color);
+}
+
+section{
+    min-height: 100vh;
+}
+
+/* intro section */
+
+.intro{
+    height: 100vh;
+    background: var(--intro-bg-color);
+}
+
+.intro .intro-container{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    
+}
+
+.intro .intro-container .intro-text-wrapper{
+    letter-spacing: -.5vw;
+    display: grid;
+    place-items: center;
+}
+
+.intro .intro-container .intro-text-wrapper div{
+    margin-bottom: 1.5vw;
+}
+
+.intro .intro-container .intro-text-wrapper h2{
+    color: transparent;
+    -webkit-text-stroke: .7px var(--intro-text-color);
+    font-size: 10vw;
+    word-spacing: .1em;
+    line-height: .8;
+}
+
+.intro .intro-container .intro-click{
+    color: var(--intro-text-color);
+    font-size: 3.5vw;
+    margin-top: 3rem;
+    visibility: hidden;
+}
+
+
+
+/* typing animation */
+.intro-sentence1{
+    border-right: 3px solid var(--intro-text-color);
+    width: 14.2ch;
+    white-space: nowrap;
+	overflow: hidden;
+    animation: typing 2s steps(16, end), 
+               blink .5s step-end infinite alternate
+}
+
+.intro-sentence2{
+    border-right: 3px solid var(--intro-text-color);
+    width: 17.5ch;
+    white-space: nowrap;
+	overflow: hidden;
+    visibility: hidden;
+}
+
+.intro-sentence3{
+    border-right: 3px solid var(--intro-text-color);
+    width: 9.3ch;
+    white-space: nowrap;
+	overflow: hidden;
+    visibility: hidden;
+}
+
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+}   
+@keyframes blink {
+    50% {
+        /* 50%로 하면 계속 반복됨 */
+        border-color: transparent; 
+    }
+}
+
+/* main section */
+
+.main{
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.dd{
+    font-size: 5rem;
+}
