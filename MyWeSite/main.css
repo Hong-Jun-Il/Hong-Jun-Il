@@ -29,6 +29,7 @@ section{
 /* intro section */
 
 .intro{
+    display: none;
     height: 100vh;
     background: var(--intro-bg-color);
 }
@@ -57,14 +58,13 @@ section{
     color: transparent;
     -webkit-text-stroke: .7px var(--intro-text-color);
     font-size: 10vw;
-    word-spacing: .1em;
-    line-height: .8;
+    /* word-spacing: .1em;
+    line-height: 1.2; */
 }
 
 .intro .intro-container .intro-click{
     color: var(--intro-text-color);
     font-size: 3.5vw;
-    margin-top: 3rem;
     visibility: hidden;
 }
 
@@ -73,24 +73,26 @@ section{
 /* typing animation */
 .intro-sentence1{
     border-right: 3px solid var(--intro-text-color);
-    width: 14.2ch;
+    width: 13.8ch;
     white-space: nowrap;
 	overflow: hidden;
+    margin-bottom: -4vw;
     animation: typing 2s steps(16, end), 
                blink .5s step-end infinite alternate
 }
 
 .intro-sentence2{
     border-right: 3px solid var(--intro-text-color);
-    width: 17.5ch;
+    width: 17.4ch;
     white-space: nowrap;
 	overflow: hidden;
     visibility: hidden;
+    margin-bottom: -4vw;
 }
 
 .intro-sentence3{
     border-right: 3px solid var(--intro-text-color);
-    width: 9.3ch;
+    width: 9.1ch;
     white-space: nowrap;
 	overflow: hidden;
     visibility: hidden;
@@ -111,11 +113,7 @@ section{
 /* main section */
 
 .main{
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.dd{
-    font-size: 5rem;
 }

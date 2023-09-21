@@ -5,9 +5,6 @@ const typingSentence1 = document.querySelector('.intro-sentence1');
 const typingSentence2 = document.querySelector('.intro-sentence2');
 const typingSentence3 = document.querySelector('.intro-sentence3');
 
-// 지울거
-const dd = document.querySelector('.dd');
-
 intro.addEventListener('click', begin);
 
 // intro fade-out animation start
@@ -16,7 +13,6 @@ function begin(){
     gsap.to(intro, {opacity: 0, duration: 1, onComplete: () => {
         intro.style.display = 'none';
         main.style.display = 'flex';
-        // 밑에거 지울거임
         gsap.utils.toArray('.GSAP_appear_effect').forEach(item=>{
             appear(item);
         })
