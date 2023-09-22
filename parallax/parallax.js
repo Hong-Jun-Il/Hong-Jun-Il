@@ -1,26 +1,125 @@
-const box1 = document.querySelector('#section1 .parallax__item__img');
-const box2 = document.querySelector('#section2 .parallax__item__img');
-const box3 = document.querySelector('#section3 .parallax__item__img');
-const box4 = document.querySelector('#section4 .parallax__item__img');
-const box5 = document.querySelector('#section5 .parallax__item__img');
-const box6 = document.querySelector('#section6 .parallax__item__img');
-const box7 = document.querySelector('#section7 .parallax__item__img');
-const box8 = document.querySelector('#section8 .parallax__item__img');
-const box9 = document.querySelector('#section9 .parallax__item__img');
+const ani1 = gsap.timeline();
 
-gsap.to(box1, {
-    x: 500,
-    duration: 2,
-    rotation: 360,
-    borderRadius: 100,
+ani1.to("#section1 .parallax__item__img", {rotation: 720, scale: 0, borderRadius: 200})
+    .to("#section1 .parallax__item__img", {rotation: 0, scale: 1, borderRadius: 0});
+
+ScrollTrigger.create({
+    animation: ani1,
+    trigger: '#section1',
+    start: 'top top',
+    end: '+=2000',
+    markers: true,
+    scrub: true,
+    anticipatePin: 1,
+    pin: true,
 });
 
-gsap.to(box2, {
-    x: 500,
-    duration: 2,
-    rotation: 360,
-    borderRadius: 100,
-    scrollTrigger: {
-        trigger: box2
-    }
+// section2
+
+const ani2 = gsap.timeline();
+
+ani2.from("#section2 .i1", {y: -100, autoAlpha: 0, borderRadius: 200})
+.from("#section2 .i2", {y: 100, autoAlpha: 0, borderRadius: 200})
+.from("#section2 .i3", {y: -100, autoAlpha: 0, borderRadius: 200})
+
+ScrollTrigger.create({
+    animation: ani2,
+    trigger: '#section2',
+    start: 'top top',
+    end: '+=2000',
+    markers: true,
+    scrub: true,
+    pin: true,
+    anticipatePin: 1,
+});
+
+// section3
+
+const ani3 = gsap.timeline();
+
+ani3.from("#section3 .parallax__item__img", {
+    y: -100,
+    autoAlpha: 0,
+    ease: 'back.out(4)',
+    stagger: {
+        amount: 13,
+        from: "left ",
+    },
+});
+
+ScrollTrigger.create({
+    animation: ani3,
+    trigger: '#section3',
+    start: 'top top',
+    end: '+=4000',
+    markers: true,
+    scrub: true,
+    pin: true,
+    anticipatePin: 1,
+});
+
+const ani4 = gsap.timeline();
+
+ani4.from("#section4 .parallax__item__img", {
+    autoAlpha: 0,
+    width: "100vw",
+    height: "100vh",
+    scale: 10,
 })
+
+ScrollTrigger.create({
+    animation: ani4,
+    trigger: '#section4',
+    start: 'top top',
+    end: '+=4000',
+    markers: true,
+    scrub: true,
+    pin: true,
+    anticipatePin: 1,
+});
+
+const ani5 = gsap.timeline();
+
+ani5.to("#section5 .t1", {
+    xPercent: 300,
+}, "text")
+.to("#section5 .t2", {
+    xPercent: -300
+}, "text")
+.to("#section5 .t3", {
+    xPercent: 300
+}, "text")
+.to("#section5 .t4", {
+    xPercent: -300
+}, "text");
+
+
+ScrollTrigger.create({
+    animation: ani5,
+    trigger: '#section5',
+    start: 'top top',
+    end: '+=2000',
+    markers: true,
+    scrub: true,
+    pin: true,
+    anticipatePin: 1,
+});
+
+const ani6 = gsap.timeline();
+
+ani6.to("#section6 .parallax__item__text", {
+    scale: 10, 
+    duration: 2,
+    autoAlpha: 0,
+})
+
+ScrollTrigger.create({
+    animation: ani6,
+    trigger: '#section6',
+    start: 'top top',
+    end: '+=2000',
+    markers: true,
+    scrub: true,
+    pin: true,
+    anticipatePin: 1,
+});
