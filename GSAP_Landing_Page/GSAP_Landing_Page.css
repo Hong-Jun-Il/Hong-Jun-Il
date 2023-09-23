@@ -1,0 +1,98 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: black;
+    color: white;
+}
+
+.loader{
+    background-color: #181818;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.counter{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 2rem 4rem;
+    font-size: 10vw;
+    z-index: 1000;
+}
+
+.circles{
+    position: absolute;
+    bottom: 5rem;
+    left: 5rem;
+    border-radius: 100%;
+    height: 400px;
+    width: 400px;
+}
+
+.circle{
+    border: 1px solid white;
+    border-radius: 100%;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* background-color: none; */
+}
+
+.circle-inner{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 400px;
+}
+
+.circle-inner-rotator{
+    border: 1px solid white;
+    position: absolute;
+    left: 50%;
+    border-radius: 100%;
+    width: 162.5px;
+    height: 162.5px;
+    transform: translateX(-50%) scale(0);
+    /* background: none; */
+}
+
+.block{
+    position: absolute;
+    top: -100px;
+    left: 200px;
+    border: 1px solid white;
+    width: 0;
+    height: 0;
+    display: none;
+    transform-origin: bottom;
+}
+
+.container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    color: black;
+}
