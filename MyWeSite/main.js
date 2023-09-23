@@ -1,57 +1,155 @@
 const intro = document.querySelector('.intro');
 const main = document.querySelector('.main');
-const introBtn = document.querySelector('.intro-btn');
-const typingSentence1 = document.querySelector('.intro-sentence1');
-const typingSentence2 = document.querySelector('.intro-sentence2');
-const typingSentence3 = document.querySelector('.intro-sentence3');
 
 intro.addEventListener('click', begin);
 
-// intro fade-out animation start
+
+// intro start
 
 function begin(){
     gsap.to(intro, {opacity: 0, duration: 1, onComplete: () => {
         intro.style.display = 'none';
         main.style.display = 'flex';
-        gsap.utils.toArray('.GSAP_appear_effect').forEach(item=>{
-            appear(item);
-        })
+        LoadLandingPage();
     }});
 }
 
-// intro multiple typing animation start
+// landing page
 
-typingSentence1.addEventListener('animationend', ()=>{
-    typingSentence2.style.visibility = "visible";
-    typingSentence2.style.animation = "typing 2s steps(22, end), blink .5s step-end infinite alternate";
-})
-
-typingSentence2.addEventListener('animationend', ()=>{
-    typingSentence3.style.visibility = "visible";
-    typingSentence3.style.animation = "typing .9s steps(11, end), blink .5s step-end infinite alternate";
-})
-
-// intro-click appear animation
-
-typingSentence3.addEventListener('animationend', ()=>{
-    const ic = document.querySelector('.intro-click');
-    ic.style.visibility = "visible";
-    appear(ic);
-})
-
-function appear(item){
-    let x = -100;
-    let y = 0;
-    let delay = item.dataset.delay;
-    let duration = item.dataset.duration
-
-    if(item.classList.contains('GSAP_appear_effect_TTB')){
-        x = 0;
-        y = -20;
+function LoadLandingPage(){
+    function startLoader(){
+        let counterElement = document.querySelector('.counter');
+        let currentValue = 0;
+    
+        function updateCounter(){
+            if(currentValue === 100){
+                return;
+            }
+            currentValue += Math.floor(Math.random()*10)+1;
+            if(currentValue > 100){
+                currentValue = 100;
+            }
+    
+            counterElement.textContent = `${currentValue}%`;
+    
+            let delay = Math.floor(Math.random()*200)+250;
+            setTimeout(updateCounter, delay);
+        }
+    
+        updateCounter();
     }
-
-    gsap.fromTo(item, 
-        {autoAlpha: 0, x: x, y: y, },
-        {autoAlpha: 1, x: 0, y: 0, delay: delay, duration: duration, overwrite: 'auto', ease: 'expo'}
-    )
+    
+    startLoader();
+    
+    gsap.from('.circles', {
+        duration: 2, // duration 추가
+        top: '-100%',
+        ease: 'elastic.out',
+        delay: 0.5,
+    });
+    
+    gsap.to('.circle-inner', {
+        duration: 1, // duration 추가
+        width: '75px',
+        height: '75px',
+        ease: 'power4.inOut',
+        delay: 2,
+    });
+    
+    gsap.to('.circle-inner-rotator', {
+        duration: 1, // duration 추가
+        scale: 1,
+        ease: 'power4.inOut',
+        delay: 2.5,
+    });
+    
+    gsap.to('.circles', {
+        duration: 1.5, // duration 추가
+        rotation: 360,
+        ease: 'power4.inOut',
+        delay: 3,
+    });
+    
+    gsap.to('.block', {
+        duration: 0.75, // duration 추가
+        display: 'block',
+        height: '200px',
+        ease: 'power4.inOut',
+        delay: 4,
+    });
+    
+    gsap.to('.block', {
+        duration: 0.75, // duration 추가
+        width: '800px',
+        ease: 'power4.inOut',
+        delay: 4.5,
+    });
+    
+    gsap.fromTo('.main-container', {
+        duration: 2,
+        left: '100%',
+        scale: 0.5,
+        ease: 'power4.inOut',
+        delay: 4,
+    },{
+        duration: 2,
+        left: '50%',
+        scale: 0.5,
+        transform: 'translateX(-50%)', // transform 대신에 x 사용
+        ease: 'power4.inOut',
+        delay: 4,
+    });
+    
+    gsap.to('.block', {
+        duration: 1.5, // duration 추가
+        width: '0px',
+        ease: 'power4.inOut',
+        delay: 5, 
+    });
+    
+    gsap.to('.block', {
+        duration: 1, // duration 추가
+        height: '0px',
+        ease: 'power4.inOut',
+        delay: 6,
+    });
+    
+    gsap.to('.circles', {
+        duration: 1.5, // duration 추가
+        rotation: 0,
+        ease: 'power4.inOut',
+        delay: 6.5,
+    });
+    
+    gsap.to('.loader', {
+        duration: 2.5, // duration 추가
+        scale: 0,
+        ease: 'power4.inOut',
+        delay: 7,
+    });
+    
+    gsap.to('.main-container', {
+        duration: 2, // duration 추가
+        scale: 1,
+        ease: 'power4.inOut',
+        delay: 7.5,
+    });
 }
+
+
+// MAIN SECTION
+// const testElements = document.querySelectorAll('.test');
+
+// gsap.from(testElements, {
+//     autoAlpha: 0,
+//     y: 50,
+//     rotation: 100,
+//     duration: 1,
+//     ease: 'back.out(1.5)',
+//     stagger: {
+//         amount: .8,
+//     },
+//     scale: .5
+// });
+
+
