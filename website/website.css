@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300;1,400;1,500;1,600;1,700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+:root{
+    --bg-white-color: white;
+    --bg-black-color: black;
+    --line-white-color: white;
+    --line-black-color: black;
+    --text-white-color: white;
+    --text-black-color: black;
+}
+
+*{
+    font-family: 'Cormorant Garamond', sans-serif;
+    font-style: italic;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    scroll-behavior: smooth;
+    outline: none;
+    list-style-type: none;
+}
+
+html, body{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.intro{
+    color: black;
+    font-size: 6vw;
+}
+
+.blocks{
+    width: 100%;
+    height: 100vh;
+}
+
+.block{
+    position: fixed;
+    width: 100%;
+    height: 50vh;
+    z-index: 5;
+    background: var(--bg-white-color);
+}
+
+.block-top{
+    top: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.block-top-text{
+    opacity: 0;
+}
+
+.block-bottom{
+    bottom: 0%;
+    display: flex;
+    justify-content: center;
+}
+
+.block-bottom-text{
+    opacity: 0;
+}
+
+.lines{
+    position: absolute;
+    z-index: 6;
+}
+
+.vertical-line1{
+    height: 0vh;
+    border: 1px solid var(--line-black-color);
+    top: 25%;
+    left: 25%;
+    display: none;
+}
+
+.vertical-line2{
+    height: 0vh;
+    border: 1px solid var(--line-black-color);
+    bottom: 25%;
+    right: 25%;
+    display: none;
+}
+
+.horizontal-line1{
+    border: 1px solid var(--line-black-color);
+    top: 65%;
+    width: 0vw;
+    left: 25%;
+    display: none;
+}
+
+.horizontal-line2{
+    border: 1px solid var(--line-black-color);
+    bottom: 65%;
+    width: 0vw;
+    right: 25%;
+    display: none;
+}
+
+.center-line{
+    border: 1px solid var(--line-black-color);
+    width: 0vw;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* 밑에건 실험용 나중에 지우셈 */
+
+.side-nav{
+    /* background: var(--bg-white-color); */
+    width: 5rem;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 5rem 0 5rem;
+    position: fixed;
+    top: 0;
+    z-index: 4;
+}
+
+.side-nav a{
+    color: white;
+    cursor: pointer;
+}
+
+.side-nav .logo{
+    font-size: .9rem;
+}
+
+.side-nav .logo h1 sup{
+    padding-left: .2rem;
+    font-size: 1rem;
+}
+
+.side-nav .latest{
+    width: 10rem;
+    font-size: 1.2rem;
+    font-weight: 800;
+    transform: rotate(-90deg) translateX(30%);
+}
+
+.side-nav .border-right{
+    position: absolute;
+    bottom: 0;
+    left: 5rem;
+    height: 0vh;
+    border: 1px solid var(--line-white-color);
+}
+
+.section1{
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    z-index: 3;
+    color: var(--text-white-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: black;
+}
+
+.section1 .top-nav{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: var(--text-white-color);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 2rem;
+    padding: 3rem 3rem 2rem;
+}
+
+.section1 .top-nav a{
+    color: var(--text-white-color);
+}
+
+.section1 .top-nav .nav-list{
+    display: flex;
+    margin-left: 10rem;
+}
+
+.section1 .top-nav .nav-list li{
+    padding: 0 2rem;
+}
+
+.section1 .top-nav .border-bottom{
+    position: absolute;
+    width: 0;
+    border: 1px solid var(--line-white-color);
+    right: 0;
+    top: 7.4rem;
+}
+
+.section1 .section1-content{
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 100vh;
+    margin-top: 14.9rem;
+    margin-left: 5rem;
+}
+
+.section1 .section1-content .text-wrapper{
+   line-height: .8;
+   width: 100%;
+   height: 70%;
+   /* border: 1px solid green; */
+   display: flex;
+   justify-content: center;
+   align-items: flex-start;
+   flex-direction: column;
+}   
+
+.section1 .section1-content .text-wrapper h1{
+    font-size: 9vw;
+    max-width: 100%;
+    text-transform: uppercase;
+    font-weight: 1000;
+    opacity: 1;
+}
+
+.section1 .section1-content .text-wrapper h1:nth-child(1){
+    padding-left: 5vw;
+}
+
+.section1 .section1-content .text-wrapper h1:nth-child(2){
+    padding-left: 15vw;
+}
+
+.section1 .section1-content .text-wrapper h1:nth-child(3){
+    padding-left: 25vw;
+}
