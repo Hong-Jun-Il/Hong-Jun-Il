@@ -54,7 +54,7 @@ gsap.to('.block-top-text', {
 });
 
 gsap.to('.block-bottom-text', {
-    delay: 3, 
+    delay: 3.5, 
     ease: 'power4.inOut',
     duration: 1.5,
     autoAlpha: 1,
@@ -142,13 +142,15 @@ gsap.fromTo('.text3', {
     delay: 9.6,
 })
 
-gsap.fromTo('.text4', {
+gsap.fromTo('.nav-list li', {
+    y: -40,
     autoAlpha: 0,
-    x: -50,
 },{
+    y: 0,
     autoAlpha: 1,
-    x: 0,
+    duration: 0.8,
     ease: 'power1.inOut',
-    duration: .8,
-    delay: 10.4,
+    delay: (index)=>{
+        return (index * .1)+10;
+    }
 })
