@@ -1,156 +1,44 @@
-gsap.to('.vertical-line1', {
-    delay: 1, 
-    display: 'block',
-});
+const sec1 = document.querySelector('.section1');
 
-gsap.to('.vertical-line2', {
-    delay: 1, 
-    display: 'block',
-});
+sec1.style.cursor = 'none';
 
-gsap.to('.horizontal-line1', {
-    delay: 2.25,
-    display: 'block',
-});
+const cursor = document.createElement('div');
+cursor.classList.add('cursor');
+sec1.appendChild(cursor);
 
-gsap.to('.horizontal-line2', {
-    delay: 2.25,
-    display: 'block',
-});
+const follow = document.createElement('div');
+follow.classList.add('follow');
+sec1.appendChild(follow);
 
-gsap.to('.vertical-line1', {
-    delay: .5,
-    ease: 'power4.inOut',
-    duration: 2,
-    height: '40vh',
-});
+function move(obj, event){
+    obj.style = '';
+    obj.style.top = `${event.clientY}px`;
+    obj.style.left = `${event.clientX}px`;
+}
 
-gsap.to('.vertical-line2', {
-    delay: .5,
-    ease: 'power4.inOut',
-    duration: 2,
-    height: '40vh',
-});
+if(cursor){
+    sec1.addEventListener('mousemove', (event) =>{
+        const e = event;
+        const t = event.target;
+        const f = follow;
+        const c = cursor;
 
-gsap.to('.horizontal-line1', {
-    delay: 2,
-    ease: 'power4.inOut',
-    duration: 2,
-    width: '45vw',
-});
+        if(t.tagName === 'A'){
+            c.style.backgroundColor = "transparent";
+        
+            const rect = t.getBoundingClientRect();
+            f.style.top = rect.top + 'px';
+            f.style.left = rect.left + 'px';
+            f.style.width = rect.width + 'px';
+            f.style.height = rect.height + 'px';
+        
+            f.classList.add('on-focus');
+        }
+        else{
+            move(f, e);
+            move(c, e);
 
-gsap.to('.horizontal-line2', {
-    delay: 2,
-    ease: 'power4.inOut',
-    duration: 2,
-    width: '45vw',
-});
-
-gsap.to('.block-top-text', {
-    delay: 3, 
-    ease: 'power4.inOut',
-    duration: 1.5,
-    autoAlpha: 1,
-});
-
-gsap.to('.block-bottom-text', {
-    delay: 3.5, 
-    ease: 'power4.inOut',
-    duration: 1.5,
-    autoAlpha: 1,
-});
-
-gsap.to('.center-line', {
-    delay: 4, 
-    ease: 'power4.inOut',
-    duration: 2,
-    width: '40vw',
-});
-
-gsap.to('.center-line', {
-    delay: 4.2, 
-    ease: 'power4.inOut',
-    duration: 2,
-    width: '100%',
-});
-
-gsap.to('.block-top', {
-    top: '-50%',
-    ease: 'power3.inOut',
-    delay: 7,
-    duration: 2,
-});
-
-gsap.to('.block-bottom', {
-    bottom: '-50%',
-    delay: 7,
-    ease: 'power3.inOut',
-    duration: 2,
-});
-
-gsap.to('.lines', {
-    delay: 7.2,
-    autoAlpha: 0,
-    ease: 'power3.inOut',
-    duration: 1,
-});
-
-gsap.to('.border-right', {
-    ease: 'power4.inOut',
-    height: '100vh', 
-    duration: 1.5,
-    delay: 7.8,
-});
-
-gsap.to('.border-bottom', {
-    ease: 'power4.inOut',
-    width: '100vw', 
-    duration: 1.5,
-    delay: 7.8,
-});
-
-gsap.fromTo('.text1', {
-    autoAlpha: 0,
-    x: -50,
-},{
-    autoAlpha: 1,
-    x: 0,
-    ease: 'power1.inOut',
-    duration: .8,
-    delay: 8,
-});
-
-gsap.fromTo('.text2', {
-    autoAlpha: 0,
-    x: -50,
-},{
-    autoAlpha: 1,
-    x: 0,
-    ease: 'power1.inOut',
-    duration: .8,
-    delay: 8.8,
-});
-
-gsap.fromTo('.text3', {
-    autoAlpha: 0,
-    x: -50,
-},{
-    autoAlpha: 1,
-    x: 0,
-    ease: 'power1.inOut',
-    duration: .8,
-    delay: 9.6,
-})
-
-gsap.fromTo('.nav-list li', {
-    y: -40,
-    autoAlpha: 0,
-},{
-    y: 0,
-    autoAlpha: 1,
-    duration: 0.8,
-    ease: 'power1.inOut',
-    delay: (index)=>{
-        return (index * .1)+10;
-    }
-})
+            f.classList.remove('on-focus');
+        }
+    })
+}

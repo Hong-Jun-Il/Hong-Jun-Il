@@ -1,12 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300;1,400;1,500;1,600;1,700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
 :root{
-    --bg-white-color: white;
-    --bg-black-color: black;
-    --line-white-color: white;
-    --line-black-color: black;
-    --text-white-color: white;
-    --text-black-color: black;
+    --white-color: white;
+    --black-color: black;
 }
 
 *{
@@ -42,7 +38,7 @@ html, body{
     width: 100%;
     height: 50vh;
     z-index: 5;
-    background: var(--bg-white-color);
+    background: var(--white-color);
 }
 
 .block-top{
@@ -73,7 +69,7 @@ html, body{
 
 .vertical-line1{
     height: 0vh;
-    border: 1px solid var(--line-black-color);
+    border: 1px solid var(--black-color);
     top: 25%;
     left: 25%;
     display: none;
@@ -81,14 +77,14 @@ html, body{
 
 .vertical-line2{
     height: 0vh;
-    border: 1px solid var(--line-black-color);
+    border: 1px solid var(--black-color);
     bottom: 25%;
     right: 25%;
     display: none;
 }
 
 .horizontal-line1{
-    border: 1px solid var(--line-black-color);
+    border: 1px solid var(--black-color);
     top: 65%;
     width: 0vw;
     left: 25%;
@@ -96,7 +92,7 @@ html, body{
 }
 
 .horizontal-line2{
-    border: 1px solid var(--line-black-color);
+    border: 1px solid var(--black-color);
     bottom: 65%;
     width: 0vw;
     right: 25%;
@@ -104,7 +100,7 @@ html, body{
 }
 
 .center-line{
-    border: 1px solid var(--line-black-color);
+    border: 1px solid var(--black-color);
     width: 0vw;
     top: 50%;
     left: 50%;
@@ -114,7 +110,7 @@ html, body{
 /* 밑에건 실험용 나중에 지우셈 */
 
 .side-nav{
-    /* background: var(--bg-white-color); */
+    /* background: var(--white-color); */
     width: 5rem;
     height: 100vh;
     display: flex;
@@ -154,7 +150,7 @@ html, body{
     bottom: 0;
     left: 5rem;
     height: 0vh;
-    border: 1px solid var(--line-white-color);
+    border: 1px solid var(--white-color);
 }
 
 .section1{
@@ -163,7 +159,7 @@ html, body{
     left: 0;
     object-fit: cover;
     z-index: 3;
-    color: var(--text-white-color);
+    color: var(--white-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -177,31 +173,29 @@ html, body{
     top: 0;
     left: 0;
     width: 100%;
-    color: var(--text-white-color);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    font-size: 2rem;
-    padding: 3rem 3rem 2rem;
-}
-
-.section1 .top-nav a{
-    color: var(--text-white-color);
+    padding: 3rem 0rem 2rem;
 }
 
 .section1 .top-nav .nav-list{
     display: flex;
-    margin-left: 10rem;
+    margin-left: 20vw;
 }
 
 .section1 .top-nav .nav-list li{
-    padding: 0 2rem;
+    padding: 0 1rem;
+}
+
+.section1 .top-nav .nav-list li a{
+    font-size: 2rem;
+    color: var(--white-color);
+    padding: 1rem 2rem;
+    font-weight: 1000;
 }
 
 .section1 .top-nav .border-bottom{
     position: absolute;
-    width: 0;
-    border: 1px solid var(--line-white-color);
+    width: 0vw;
+    border: 1px solid var(--white-color);
     right: 0;
     top: 7.4rem;
 }
@@ -243,4 +237,32 @@ html, body{
 
 .section1 .section1-content .text-wrapper h1:nth-child(3){
     padding-left: 25vw;
+}
+
+/* mouse cursor effect */
+
+.cursor, .follow{
+    position: absolute;
+    pointer-events: none;
+    width: 1em;
+    height: 1em;
+    transform: translate(-50%, -50%);
+}
+
+.cursor{
+    background-color: var(--white-color);
+    border-radius: 100%;
+}
+
+.follow{
+    padding: 2rem;
+    border: .1rem solid var(--white-color);
+    border-radius: 100%;
+    transition: all 0.2s ease-out;
+}
+
+.follow.on-focus{
+   transform: translate(0, 0);
+   border: 1px solid var(--white-color);
+   border-radius: 0%;
 }
