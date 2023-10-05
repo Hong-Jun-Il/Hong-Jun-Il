@@ -1,0 +1,40 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  overflow: hidden;
+  background: #161616;
+}
+
+.header{
+  position: absolute;
+  display: flex;
+  height: 150px;
+  width: 100%;
+  z-index: 10000;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.header .logo{
+  margin-left: 30px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.header ul{
+  list-style: none;
+  text-align: right;
+  margin-right: 30px;
+}
+
+.header ul li .link{
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+  margin-top: 5px;
+  text-decoration: none;
+}
