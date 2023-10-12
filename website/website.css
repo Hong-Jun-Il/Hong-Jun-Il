@@ -17,10 +17,15 @@
     list-style-type: none;
 }
 
-html, body{
+body, html{
     width: 100vw;
     height: 100vh;
     overflow: hidden;
+}
+
+section{
+    width: 100%;
+    height: 100vh;
 }
 
 .intro{
@@ -265,4 +270,14 @@ html, body{
    transform: translate(0, 0);
    border: 1px solid var(--white-color);
    border-radius: 0%;
+}
+
+/* section2 */
+
+.section2{
+    background: green;
+    color: red;
+    margin-top: 100vh;
+    position: absolute;
+    z-index: 3;
 }

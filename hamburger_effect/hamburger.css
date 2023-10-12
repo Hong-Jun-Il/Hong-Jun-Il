@@ -1,0 +1,88 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.icon-wrap{
+    border: 2px solid black;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.icon-wrap::after{
+    content: '';
+    border: 2px solid black;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 100%;
+    animation: puls 1s ease infinite;
+}
+
+.icon-wrap .icon{
+    width: 50%;
+    position: absolute;
+    height: 2px;
+    background-color: black;
+    transition: background-color .3s;
+}
+
+.icon-wrap .icon::after, 
+.icon-wrap .icon::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: black;
+}
+
+.icon-wrap .icon::after{
+    top: 7px;
+    transition: transform .3s cubic-bezier(0.23,1,0.32,1), top .3s .3s cubic-bezier(0.23,1,0.32,1) ;
+}
+
+.icon-wrap .icon::before{
+    bottom: 7px;
+    transition: transform .3s cubic-bezier(0.23,1,0.32,1), bottom .3s .3s cubic-bezier(0.23,1,0.32,1) ;
+}
+
+.icon-wrap .icon.animation{
+    background-color: transparent;
+}
+
+.icon-wrap .icon.animation::after{
+    top: 0;
+    transform: rotate(-45deg);
+    transition: top .3s cubic-bezier(0.23,1,0.32,1), transform .3s .3s cubic-bezier(0.23,1,0.32,1);
+}
+
+.icon-wrap .icon.animation::before{
+    bottom: 0;
+    transform: rotate(45deg);
+    transition: bottom .3s cubic-bezier(0.23,1,0.32,1), transform .3s .3s cubic-bezier(0.23,1,0.32,1);
+}
+
+@keyframes puls{
+    0%{
+        opacity: 1;
+        transform: scale(1);
+    }
+    100%{
+        opacity: 0;
+        transform: scale(1.3);
+    }
+}
