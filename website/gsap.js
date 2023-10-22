@@ -202,11 +202,29 @@ function projectSecAni() {
             scrollTrigger: {
                 trigger: item,
                 start: 'top 90%',
+            },
+            onComplete: () =>{
+                selectFunc();
             }
         })
     });
 }
 
-// introAnimation();
-// aboutSecAni();
-// projectSecAni();
+function selectFunc(){
+    const projectItems = document.querySelectorAll('.project-item');
+
+    projectItems.forEach((e) => {
+        e.addEventListener('mouseenter', (e)=>{
+            e.target.style.transform = 'scale(1.03)';
+            e.target.style.transition = '.4s';
+        })
+        e.addEventListener('mouseleave', (e)=>{
+            e.target.style.transform = 'scale(1.00)';
+            e.target.style.transition = '.4s';
+        })
+    });
+}
+
+introAnimation();
+aboutSecAni();
+projectSecAni();

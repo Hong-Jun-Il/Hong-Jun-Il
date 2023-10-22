@@ -248,7 +248,7 @@ section{
 }
 
 #section1 .text-wrapper .h1-wrapper h1{
-    opacity: 1;
+    opacity: 0;
 }
 
 #section1 .text-wrapper .h1-wrapper span{
@@ -354,18 +354,12 @@ section{
 }
 
 #section3 .section-content .projects .project-item{
-    /* border: 1px solid white; */
     margin-top: 30rem;
     width: 100%;
     height: 25rem;
     border-radius: 10px;
     overflow: hidden;
     position: relative;
-    transition: .4s;
-}
-
-#section3 .section-content .projects .project-item:hover{
-    transform: scale(1.03);
 }
 
 #section3 .section-content .projects .project-item img{

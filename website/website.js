@@ -79,5 +79,5 @@ function cursorShowImg(){
 }
 
 // locoInitailze();
-// jumpingAnimation();
-// cursorShowImg();
+jumpingAnimation();
+cursorShowImg();
