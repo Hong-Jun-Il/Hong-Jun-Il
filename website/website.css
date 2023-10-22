@@ -1,12 +1,17 @@
 :root{
     --white-color: white;
     --black-color: black;
-    --second-background-color: #161616;
+    --background-color: #1c1a1a;
+    --side-nav-background-color: #e9ecef;
+    --text-color: #dee2e6;
+    --btn-text-color: #fff;
+    --btn-background-color: #be2c2c;
+    --section2-text-wrapper-color: #e9ecef;
 }
 
 *::selection{
-    background-color: white;
-    color: black;
+    background-color: var(--text-color);
+    color: var(--background-color);
 }
 
 *{
@@ -23,17 +28,33 @@
 section{
     width: 100%;
     min-height: 100vh;
-    background-color: #1c1a1a;
+    background-color: var(--background-color);
     overflow-y: hidden;
 }
 
 .section-content{
-    min-height: 100vh;
-    display: flex;
+    padding-top: 350px;
+    height: fit-content;
     max-width: 1200px;
     margin: 0 auto;
-    padding-top: 155px;
-    color: var(--white-color);
+    color: var(--text-color);
+}
+
+.section-content .heading{
+    font-size: 5vw;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.section-content .heading .letters{
+    display: flex;
+}
+
+.section-content .line{
+    width: 0;
+    opacity: 0;
+    border: 1px solid white;
 }
 
 .intro{
@@ -119,7 +140,8 @@ section{
 
 .side-nav{
     font-style: italic;
-    background: #e5e5e5;
+    /* background: #e5e5e5; */
+    background-color: var(--side-nav-background-color);
     width: 5rem;
     height: 100vh;
     display: flex;
@@ -164,6 +186,10 @@ section{
 }
 
 /* section1 start */
+
+#section1 .section-content{
+    padding-top: 155px;
+}
 
 #section1 .top-nav{
     position: absolute;
@@ -222,7 +248,7 @@ section{
 }
 
 #section1 .text-wrapper .h1-wrapper h1{
-    opacity: 0;
+    opacity: 1;
 }
 
 #section1 .text-wrapper .h1-wrapper span{
@@ -261,28 +287,18 @@ section{
 }
 
 #section2 .section-content{
-    display: flex;
     flex-direction: column;
-}
-
-#section2 .section-content .heading{
-    font-size: 5vw;
-    display: flex;
-}
-
-#section2 .section-content .line{
-    width: 0;
-    opacity: 0;
-    border: 1px solid white;
+    height: 120vh;
 }
 
 #section2 .section-content .text-wrapper{
-    margin-top: 8rem;
+    margin-top: 12rem;
     font-size: 2vw;
     position: relative;
     left: 31%;
     width: 65%;
     font-style: italic;
+    color: var(--section2-text-wrapper-color);
 }
 
 #section2 .section-content .text-wrapper::before{
@@ -307,35 +323,111 @@ section{
 
 /* section3 start */
 
-#section3{
-    border: 1px solid green;
-}
-
 #section3 .section-content{
+    padding-top: 280px;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: 1425px;
-    margin-left: 100px;
-    padding-top: 0;
+    flex-direction: column;
+}
+
+#section3 .section-content .btn{
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    margin: 80px 0 80px;
+    padding: 24px 60px;
+    background-color: var(--btn-background-color);
+    color: var(--text-color);
 }
 
 #section3 .section-content .projects{
     width: 100%;
+    height: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 2vw;
+    justify-content: space-around;
+}
 
+#section3 .section-content .col{
+    flex: 1 1 50%;
+    display: flex;
+    flex-direction: column;
 }
 
 #section3 .section-content .projects .project-item{
-    flex: 0 1 31%;
-    border: 1px solid white;
-    height: 40vh;
+    /* border: 1px solid white; */
+    margin-top: 30rem;
+    width: 100%;
+    height: 25rem;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    transition: .4s;
 }
+
+#section3 .section-content .projects .project-item:hover{
+    transform: scale(1.03);
+}
+
+#section3 .section-content .projects .project-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: 1;
+}
+
+#section3 .section-content .col .project-item a{
+    cursor: pointer;
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    height: 100%;
+}
+
+#section3 .section-content .col .project-item a .project-info p{
+    background: var(--section2-text-wrapper-color);
+    color: black;
+    position: relative;
+    text-align: center;
+    z-index: 2;
+    border-radius: 200px;
+    margin-left: 25px;
+    margin-bottom: 10px;
+    padding: 12px 40px;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+#section3 .section-content .col .project-item a .project-info p:nth-child(2){
+    margin-bottom: 30px;
+}
+
+#section3 .section-content .col .project-item a .project-info p:nth-child(1),
+#section3 .section-content .col .project-item a .project-info p:nth-child(2){
+    opacity: 0;
+    transition: .4s;
+}
+
+#section3 .section-content .col .project-item a .project-info p:nth-child(2){
+    transition-delay: .1s !important;
+}
+
+#section3 .section-content .col .project-item:hover a .project-info p:nth-child(1),
+#section3 .section-content .col .project-item:hover a .project-info p:nth-child(2){
+    opacity: 1;
+    transform: translateY(40%);
+}
+
+
+#section3 .section-content .right-col .project-item:nth-child(1){
+    margin-top: 12rem;
+}
+
+#section3 .section-content .left-col .project-item:nth-child(1){
+    margin-top: 39.5rem;
+}
+
+/* section3 cursor */
 
 #section3 .project-cursor{
     position: fixed;
@@ -344,10 +436,11 @@ section{
     left: 0;
     width: 20rem;
     pointer-events: none;
-    transition: all cubic-bezier(0.19, 1, 0.22, 1) .2s;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) .5s;
 }
 
 #section3 .project-cursor>div{
+    transform: translate(-23.5px, -27px);
     width: 100%;
     opacity: 0;
     position: absolute;
@@ -361,7 +454,6 @@ section{
 #section3 .project-cursor .top{
     display: flex;
     align-items: center;
-    /* justify-content: center; */
     gap: 20px;
     width: 100%;
     padding: .7vw;
@@ -391,24 +483,8 @@ section{
     left: 50%;
     transform: translateX(-50%);
     opacity: 0;
-    /* animation: an 5s ease infinite; */
+    border-radius: 10px;
 }
-
-/* .bottom img:nth-child(2){
-    animation-delay: 1s;
-}
-
-.bottom img:nth-child(3){
-    animation-delay: 2s;
-}
-
-.bottom img:nth-child(4){
-    animation-delay: 3s;
-}
-
-.bottom img:nth-child(5){
-    animation-delay: 4s;
-} */
 
 @keyframes an{
     0% {
