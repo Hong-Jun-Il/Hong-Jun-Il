@@ -4,9 +4,7 @@
     --background-color: #1c1a1a;
     --side-nav-background-color: #e9ecef;
     --text-color: #dee2e6;
-    --btn-text-color: #fff;
     --btn-background-color: #be2c2c;
-    --section2-text-wrapper-color: #e9ecef;
 }
 
 *::selection{
@@ -188,7 +186,7 @@ section{
 /* section1 start */
 
 #section1 .section-content{
-    padding-top: 155px;
+    padding-top: 145px;
 }
 
 #section1 .top-nav{
@@ -235,16 +233,18 @@ section{
     position: relative;
 }
 
+
 #section1 .text-wrapper .h1-wrapper:nth-child(1){
-    width: 55%;
+    width: 40.5%;
 }
 
 #section1 .text-wrapper .h1-wrapper:nth-child(2){
-    width: 105%;
+    width: 77.5%;
+    margin-bottom: 4.9vh;
 }
 
 #section1 .text-wrapper .h1-wrapper:nth-child(3){
-    width: 105%;
+    width: 78.7%;
 }
 
 #section1 .text-wrapper .h1-wrapper h1{
@@ -257,7 +257,7 @@ section{
     left: 0;
     width: 0%;
     height: 120%;
-    background: white;
+    background: var(--btn-background-color);
 }
 
 
@@ -298,7 +298,7 @@ section{
     left: 31%;
     width: 65%;
     font-style: italic;
-    color: var(--section2-text-wrapper-color);
+    color: var(--side-nav-background-color);
 }
 
 #section2 .section-content .text-wrapper::before{
@@ -338,6 +338,13 @@ section{
     padding: 24px 60px;
     background-color: var(--btn-background-color);
     color: var(--text-color);
+    transition: all .5s ease;
+    border: 3.5px solid var(--background-color)
+}
+
+#section3 .section-content .btn:hover{
+    transform: scale(1.05);
+    border-color: var(--side-nav-background-color)
 }
 
 #section3 .section-content .projects{
@@ -379,7 +386,7 @@ section{
 }
 
 #section3 .section-content .col .project-item a .project-info p{
-    background: var(--section2-text-wrapper-color);
+    background: var(--side-nav-background-color);
     color: black;
     position: relative;
     text-align: center;
