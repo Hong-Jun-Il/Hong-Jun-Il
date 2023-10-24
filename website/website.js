@@ -1,4 +1,4 @@
-function locoInitailze(){
+function locoInitailze() {
     const scroll = new LocomotiveScroll({
         el: document.querySelector('.section'),
         smooth: true
@@ -21,7 +21,7 @@ function jumpingAnimation() {
     });
 }
 
-function cursorShowImg(){
+function cursorShowImg() {
     const sec3 = document.querySelector('#section3');
     const c = document.querySelector('.project-cursor');
     const projectItem = document.querySelectorAll('#section3 .col .project-item');
@@ -78,6 +78,66 @@ function cursorShowImg(){
     });
 }
 
+function hamburger() {
+    const hamburger = document.querySelector('.hamburger');
+    const leftNav = document.querySelector('.left-nav');
+    const booklet = document.querySelector('.booklet');
+    const lno = document.querySelector('.left-nav-overlay');
+    const tl = gsap.timeline();
+
+    hamburger.addEventListener('click', (e) => {
+        e.target.classList.toggle('hamburgerClicked');
+        leftNav.classList.toggle('hamburgerClicked');
+
+        if (leftNav.classList.contains('hamburgerClicked')) {
+            gsap.to(booklet, {
+                left: '95%',
+                duration: 1,
+                ease: 'Circ.easeInOut',
+            })
+            tl.to(leftNav, {
+                left: '-10%',
+                duration: 1,
+                ease: 'Circ.easeInOut',
+            })
+                .to(lno, {
+                    left: 0,
+                    duration: 1,
+                    ease: 'Circ.easeInOut',
+                }, '-=.5')
+                .to(booklet, {
+                    opacity: 0,
+                })
+                .to(lno, {
+                    width: 0,
+                    left: '100%',
+                    duration: .85,
+                    ease: 'Circ.easeInOut',
+                }, '-=.75')
+                .to(booklet, {
+                    opacity: 1,
+                    delay: .1,
+                    ease: 'power1.inOut',
+                })
+                .fromTo('.left-nav-menu', {
+                    opacity: 0,
+                }, {
+                    display: 'block',
+                    ease: 'power1.inOut',
+                    duration: .5,
+                    opacity: 1,
+                })
+        }
+        // else{
+        //     gsap.to(booklet, {
+        //         left: '0%',
+        //         duration: 1,
+        //         ease: 'Circ.easeInOut',
+        //     })
+        // }
+    })
+}
+hamburger();
 // locoInitailze();
 jumpingAnimation();
 cursorShowImg();

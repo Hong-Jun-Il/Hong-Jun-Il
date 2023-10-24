@@ -38,7 +38,6 @@ section{
     padding-top: 290px;
     height: fit-content;
     max-width: 1600px;
-    /* min-width: 300px; */
     margin: 0 10vw 0;
     color: var(--text-color);
     margin-bottom: 100px;
@@ -143,9 +142,9 @@ section{
 
 /* side-nav */
 
-/* *::-webkit-scrollbar{
+*::-webkit-scrollbar{
     display: none;
-} */
+}
 
 .left-nav{
     background-color: var(--side-nav-background-color);
@@ -153,9 +152,18 @@ section{
     height: 100vh;
     position: fixed;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
+    align-items: center;
     z-index: 4;
-    right: 95%;
+    left: -105%;
+}
+
+.left-nav .left-nav-overlay{
+    position: fixed;
+    width: 110%;
+    height: 100vh;
+    background-color: #F3F0CA;
+    left: -110%;
 }
 
 .left-nav a{
@@ -165,24 +173,82 @@ section{
 
 .left-nav .booklet{
     font-style: italic;
+    position: fixed;
+    left: 0%;
     display: flex;
-    padding: 5rem 0 5rem;
+    padding: 5% 0 5%;
     justify-content: space-between;
     align-items: center;
     text-align: center;
     flex-direction: column;
     height: 100vh;
-    width: 5rem;
+    width: 5%;
+    /* border: 1px solid red; */
 }
 
 
-.left-na .booklet .logo{
-    font-size: .9rem;
+.left-nav .booklet .logo{
+    font-size: 1.2rem;
 }
 
 .left-nav .booklet .logo h1 sup{
     padding-left: .2rem;
-    font-size: 1rem;
+    font-size: 1.2rem;
+}
+
+.left-nav .booklet .hamburger{
+    border-radius: 50%;
+    width: 4vw;
+    height: 4vw;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.left-nav .booklet .hamburger .icon{
+    width: 50%;
+    position: absolute;
+    height: 2px;
+    background-color: var(--background-color);
+    transition: background-color .5s;
+}
+
+.left-nav .booklet .hamburger .icon::after, 
+.left-nav .booklet .hamburger .icon::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: var(--background-color);
+    left: 0;
+}
+
+.left-nav .booklet .hamburger .icon::after{
+    top: 7px;
+    transition: transform .3s cubic-bezier(0.23,1,0.32,1), top .3s .3s cubic-bezier(0.23,1,0.32,1) ;
+}
+
+.left-nav .booklet .hamburger .icon::before{
+    bottom: 7px;
+    transition: transform .3s cubic-bezier(0.23,1,0.32,1), bottom .3s .3s cubic-bezier(0.23,1,0.32,1) ;
+}
+
+.left-nav .booklet .hamburger.hamburgerClicked .icon{
+    background: transparent;
+}
+
+.left-nav .booklet .hamburger.hamburgerClicked .icon::after{
+    top: 0;
+    transform: rotate(-45deg);
+    transition: top .3s cubic-bezier(0.23,1,0.32,1), transform .3s .3s cubic-bezier(0.23,1,0.32,1);
+}
+
+.left-nav .booklet .hamburger.hamburgerClicked .icon::before{
+    bottom: 0;
+    transform: rotate(45deg);
+    transition: bottom .3s cubic-bezier(0.23,1,0.32,1), transform .3s .3s cubic-bezier(0.23,1,0.32,1);
 }
 
 .left-nav .booklet .latest{
@@ -197,15 +263,11 @@ section{
     bottom: 0;
     left: 5rem;
     height: 0vh;
-    border: 1px solid var(--white-color);
+    border: 1px solid var(--side-nav-background-color);
 }
 
 .left-nav .left-nav-menu{
     display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     font-size: 7rem;
     text-align: center;
     font-weight: 900;
@@ -228,7 +290,6 @@ section{
 }
 
 /* section1 */
-
 
 
 #section1{
