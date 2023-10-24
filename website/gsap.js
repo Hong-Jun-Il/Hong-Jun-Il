@@ -237,3 +237,6 @@ function selectFunc(){
 // introAnimation();
 // aboutSecAni();
 // projectSecAni();
+
+// addBoxAnimation();
+// addTextAnimation();
