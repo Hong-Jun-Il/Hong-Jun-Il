@@ -80,19 +80,19 @@ function introAnimation() {
     gsap.to('.block-top', {
         top: '-50%',
         ease: 'power3.inOut',
-        delay: 7,
+        delay: 6,
         duration: 2,
     });
 
     gsap.to('.block-bottom', {
         bottom: '-50%',
-        delay: 7,
+        delay: 6,
         ease: 'power3.inOut',
         duration: 2,
     });
 
     gsap.to('.lines', {
-        delay: 7.2,
+        delay: 6.8,
         autoAlpha: 0,
         ease: 'power3.inOut',
         duration: 1,
@@ -217,14 +217,23 @@ function selectFunc(){
         e.addEventListener('mouseenter', (e)=>{
             e.target.style.transform = 'scale(1.03)';
             e.target.style.transition = '.4s';
+            e.target.style.filter = 'grayscale(.8)';
+            document.querySelectorAll('section').forEach((section) => {
+                section.style.backgroundColor = `#${e.target.dataset.color}`;
+            });
         })
         e.addEventListener('mouseleave', (e)=>{
             e.target.style.transform = 'scale(1.00)';
             e.target.style.transition = '.4s';
+            e.target.style.filter = 'grayscale(0)';
+            document.querySelectorAll('section').forEach((section) => {
+                section.style.background = '#1c1a1a';
+            });
         })
+
     });
 }
 
-introAnimation();
-aboutSecAni();
-projectSecAni();
+// introAnimation();
+// aboutSecAni();
+// projectSecAni();
