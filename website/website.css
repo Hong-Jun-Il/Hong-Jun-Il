@@ -169,6 +169,7 @@ section{
 .left-nav a{
     color: var(--background-color);
     cursor: pointer;
+    font-family: Garamond;
 }
 
 .left-nav .booklet{
@@ -270,11 +271,13 @@ section{
     font-size: 7rem;
     text-align: center;
     font-weight: 900;
+    transform: translateX(11%);
 }
 
 .left-nav .left-nav-menu .lnm{
-    display: block;
-    overflow-y: hidden;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
     padding: .8rem;
     text-transform: uppercase;
 }
@@ -286,6 +289,7 @@ section{
 .left-nav .left-nav-menu .lnm a{
     display: none;
     transform: translate(0, 100%);
+    width: fit-content;
 }
 
 /* section1 */
