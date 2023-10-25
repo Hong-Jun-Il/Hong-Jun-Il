@@ -142,9 +142,9 @@ section{
 
 /* side-nav */
 
-*::-webkit-scrollbar{
+/* *::-webkit-scrollbar{
     display: none;
-}
+} */
 
 .left-nav{
     background-color: var(--side-nav-background-color);
@@ -267,7 +267,6 @@ section{
 }
 
 .left-nav .left-nav-menu{
-    display: none;
     font-size: 7rem;
     text-align: center;
     font-weight: 900;
@@ -285,8 +284,8 @@ section{
 }
 
 .left-nav .left-nav-menu .lnm a{
-    display: block;
-    /* transform: translate(0, 100%); */
+    display: none;
+    transform: translate(0, 100%);
 }
 
 /* section1 */

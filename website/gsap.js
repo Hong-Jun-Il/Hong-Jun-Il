@@ -234,9 +234,9 @@ function selectFunc(){
     });
 }
 
-// introAnimation();
-// aboutSecAni();
-// projectSecAni();
+introAnimation();
+aboutSecAni();
+projectSecAni();
 
-// addBoxAnimation();
-// addTextAnimation();
+addBoxAnimation();
+addTextAnimation();
