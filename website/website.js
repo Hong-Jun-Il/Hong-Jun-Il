@@ -81,6 +81,7 @@ function cursorShowImg() {
 function leftNavAnimation() {
     const h1Wrapper = document.querySelectorAll('.h1-wrapper');
     const addToggle = document.querySelectorAll('.hamburger, .lnm a');
+    const menus = document.querySelectorAll('.left-nav a');
     const leftNav = document.querySelector('.left-nav');
     const booklet = document.querySelector('.booklet');
     const lno = document.querySelector('.left-nav-overlay');
@@ -122,7 +123,7 @@ function leftNavAnimation() {
                     ease: 'power1.inOut',
                 })
                 .fromTo('.left-nav-menu .lnm a', {
-                    display: 'block',
+                    visibility: 'visible',
                 }, {
                     ease: 'power3.out',
                     duration: 1,
@@ -139,7 +140,7 @@ function leftNavAnimation() {
                 stagger: .1,
             })
             .to('.left-nav-menu .lnm a', {
-                display: 'none',
+                visibility: 'visible',
             })
             .to(booklet, {
                 opacity: 0,
@@ -168,6 +169,23 @@ function leftNavAnimation() {
                 opacity: 1,
             })
         }
+        })
+    })
+
+    menus.forEach((e)=>{
+        e.addEventListener('mouseover', ()=>{
+            leftNav.style.backgroundColor = 'rgb(31, 30, 30)';
+            menus.forEach((elem)=>{
+                elem.style.color = '#dee2e6';
+            })
+            document.querySelector('.icon').classList.add('menusHovered');
+        })
+        e.addEventListener('mouseout', ()=>{
+            leftNav.style.backgroundColor = '#e9ecef';
+            menus.forEach((elem)=>{
+                elem.style.color = '#1c1a1a';
+            })
+            document.querySelector('.icon').classList.remove('menusHovered');
         })
     })
 }

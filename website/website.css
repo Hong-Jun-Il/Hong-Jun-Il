@@ -156,6 +156,8 @@ section{
     align-items: center;
     z-index: 4;
     left: -105%;
+    /* left: -10%; */
+    transition: background-color .5s ease;
 }
 
 .left-nav .left-nav-overlay{
@@ -169,7 +171,7 @@ section{
 .left-nav a{
     color: var(--background-color);
     cursor: pointer;
-    font-family: Garamond;
+    transition: color .5s ease-in-out;
 }
 
 .left-nav .booklet{
@@ -213,7 +215,7 @@ section{
     position: absolute;
     height: 2px;
     background-color: var(--background-color);
-    transition: background-color .5s;
+    transition: background-color .5s ease-in-out;
 }
 
 .left-nav .booklet .hamburger .icon::after, 
@@ -226,14 +228,21 @@ section{
     left: 0;
 }
 
+.left-nav .booklet .hamburger .icon.menusHovered,
+.left-nav .booklet .hamburger .icon.menusHovered::after, 
+.left-nav .booklet .hamburger .icon.menusHovered::before{
+    background-color: var(--text-color);
+}
+
+
 .left-nav .booklet .hamburger .icon::after{
     top: 7px;
-    transition: transform .3s cubic-bezier(0.23,1,0.32,1), top .3s .3s cubic-bezier(0.23,1,0.32,1) ;
+    transition: transform .3s cubic-bezier(0.23,1,0.32,1), top .3s .3s cubic-bezier(0.23,1,0.32,1), background-color .5s ease-in-out;
 }
 
 .left-nav .booklet .hamburger .icon::before{
     bottom: 7px;
-    transition: transform .3s cubic-bezier(0.23,1,0.32,1), bottom .3s .3s cubic-bezier(0.23,1,0.32,1) ;
+    transition: transform .3s cubic-bezier(0.23,1,0.32,1), bottom .3s .3s cubic-bezier(0.23,1,0.32,1), background-color .5s ease-in-out ;
 }
 
 .left-nav .booklet .hamburger.hamburgerClicked .icon{
@@ -277,19 +286,35 @@ section{
 .left-nav .left-nav-menu .lnm{
     display: flex;
     justify-content: center;
-    overflow: hidden;
-    padding: .8rem;
+    overflow-y: hidden;
     text-transform: uppercase;
+    font-family: Garamond;
 }
 
-.left-nav .left-nav-menu .lnm:nth-child(2){
-    margin-bottom: 17px;
+.left-nav .left-nav-menu .lnm::after{
+    content: attr(data-after);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    font-size: 15rem;
+    letter-spacing: 50px;
+    transform: translate(-50%, -56.5%) scale(0);
+    color: rgba(240, 248, 255, 0.021);
+    z-index: -1;
+    transition: .3s ease letter-spacing;
+}
+
+.left-nav .left-nav-menu .lnm:hover::after{
+    transform: translate(-50%, -56.5%) scale(1);
+    letter-spacing: initial;
 }
 
 .left-nav .left-nav-menu .lnm a{
-    display: none;
-    transform: translate(0, 100%);
+    font-family: Garamond;
+    visibility: hidden;
+    transform: translate(0% ,100%);
     width: fit-content;
+    padding: .8rem;
 }
 
 /* section1 */
